@@ -1,16 +1,15 @@
-package fall2015;
-
 public class SecretSharingSchemes {
-	public static void main(String[] args) {
-		new SecretSharingSchemes().start();
-	}
 
 	final int k = 3;
 	final int n = 5;
 	final int p = 257;
 	int s = setRandom(p);
-
-	void start() {
+	
+	public static void main(String[] args) {
+		new SecretSharingSchemes().start();
+	}
+	
+	void start(){
 		int[] a = new int[k - 1];
 		int kotae = 0;
 		setint(a, p);
@@ -20,7 +19,7 @@ public class SecretSharingSchemes {
 			share[i] = makeshare(a, i);
 			System.out.println("share[" + i + "] = " + share[i]);
 		}
-		int select = 1;// /この値でシェアを選択できる。
+		int select = 1;
 		for (int i = 1 + select; i < k + 1 + select; i++) {
 			int i_shita = 1;
 			int i_ue = 1;
@@ -65,9 +64,9 @@ public class SecretSharingSchemes {
 		for (int i = 0; i < k - 1; i++) {
 			a[i] = setRandom(p);
 		}
-	}
+        }
 	///////////////
-	///乗法逆元
+	///inverse element
 	/////////////////
 	int inv(int x, int p) {
 		int[] A = new int[2];
